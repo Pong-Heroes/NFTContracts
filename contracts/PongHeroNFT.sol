@@ -690,11 +690,12 @@ contract PongHeroNFTV1 is Initializable, ERC721A{
         _;
     }
 
-    constructor(string memory _name, string memory _symbol, string memory _mUri){
+    constructor(string memory _name, string memory _symbol, string memory _mUri, uint256 fee_){
         ERC721A._init(_name, _symbol);
         _owner = msg.sender;
         _mainURI = _mUri;
         _maxtokens = 3999;
+        _mintFee = fee_;
     }
 
     // function initialize(string memory _name, string memory _symbol, string memory _mUri) public initializer  {
